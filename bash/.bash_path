@@ -1,10 +1,10 @@
 # Adds ~/bin
-if [ -d '$HOME/bin' ]; then
+if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
 
 # Coder Enterprise devbin
-if [ -d '$HOME/Code/enterprise/devbin' ]; then
+if [ -d "$HOME/Code/enterprise/devbin" ]; then
   PATH="$HOME/Code/enterprise/devbin:$PATH"
 fi
 
@@ -18,8 +18,8 @@ if [ -f '/opt/google-cloud-sdk/completion.bash.inc' ]; then
   . '/opt/google-cloud-sdk/completion.bash.inc';
 fi
 
-if [ -f '$HOME/.gvm/scripts/gvm' ]; then 
-  . '$HOME/.gvm/scripts/gvm'
+if [ -f "$HOME/.gvm/scripts/gvm" ]; then 
+  . "$HOME/.gvm/scripts/gvm"
 fi
 
 # kubectl autocompletion
