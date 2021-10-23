@@ -10,6 +10,9 @@ FROM ubuntu:focal
 # https://docs.docker.com/engine/reference/builder/#shell
 SHELL ["/bin/bash", "-c"]
 
+# Copy configuration files to appropriate locations
+COPY files /
+
 # Install packages from apt repositories
 ARG DEBIAN_FRONTEND="noninteractive"
  
