@@ -28,3 +28,5 @@
 	signingkey = 1B933BA64CF808BD
 [rerere]
 	enabled = true
+[rebase]
+	missingCommitsCheck = error
