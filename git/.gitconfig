@@ -1,10 +1,11 @@
 [alias]
-	clbranches = "! git branch -d $(git branch --merged=master | grep -v master)"
+	default-branch = "!git branch --sort=-refname | grep -o -m1 '\\b\\(main\\|master\\)\\b'"
+	clbranches = "! git branch -d $(git branch --merged=$(git default-branch) | grep -v $(git default-branch))"
 	f = "! git commit --fixup $(git log --pretty='%H' -1 --invert-grep --grep 'fixup! ')"
 	fs = "!f() { git commit --fixup :/$1 ; }; f"
 	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
-	mom = merge origin/master -m \"Merge origin/master\"
-	rom = rebase -i origin/master
+	mom = "! git merge origin/$(git default-branch) -m \"Merge origin/master\""
+	rom = "! git rebase -i origin/$(git default-branch)"
 	root = rev-parse --show-toplevel
 [core]
 	editor = vim
