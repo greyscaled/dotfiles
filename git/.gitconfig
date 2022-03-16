@@ -4,7 +4,7 @@
 	f = "! git commit --fixup $(git log --pretty='%H' -1 --invert-grep --grep 'fixup! ')"
 	fs = "!f() { git commit --fixup :/$1 ; }; f"
 	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
-	mom = "! git merge origin/$(git default-branch) -m \"Merge origin/master\""
+	mom = "! git merge origin/$(git default-branch) -m \"Merge origin/$(git default-branch)\""
 	rom = "! git rebase -i origin/$(git default-branch)"
 	root = rev-parse --show-toplevel
 [core]
