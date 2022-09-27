@@ -3,16 +3,6 @@ if [ -d "$HOME/bin" ]; then
   PATH="$HOME/bin:$PATH"
 fi
 
-# Coder Enterprise devbin
-# Code/enterprise is a deprecated/old path
-# Favour Code/m
-if [ -d "$HOME/Code/enterprise/devbin" ]; then
-  PATH="$HOME/Code/enterprise/devbin:$PATH"
-fi
-if [ -d "$HOME/Code/m/devbin" ]; then
-  PATH="$HOME/Code/m/devbin:$PATH"
-fi 
-
 # Google Cloud SDK.
 if [ -f '/opt/google-cloud-sdk/path.bash.inc' ]; then
   . '/opt/google-cloud-sdk/path.bash.inc';

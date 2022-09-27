@@ -107,22 +107,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Fancy PS1 for git directories
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="\u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-# Coder Environment Variables
-export GOOGLE_PROJECT_ID="coder-dev-1"
-export NAMESPACE="coder-greyb-namespace"
 
-
+# Load all custom paths defined in my .bash_path
 if [ -f "$HOME/.bash_path" ]; then
     . "$HOME/.bash_path"
 fi

@@ -9,7 +9,6 @@
 	root = rev-parse --show-toplevel
 [core]
 	editor = vim
-	fileMode = true
 [fetch]
 	prune = true
 	pruneTags = true
@@ -21,12 +20,9 @@
 	prompt = false
 [pull]
 	rebase = false
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [user]
-	email = grey@coder.com
-	name = G r e y
-	signingkey = 1B933BA64CF808BD
+	email = greybarkans@gmail.com
+	name = Grey Barkans
 [rerere]
 	enabled = true
 [rebase]
